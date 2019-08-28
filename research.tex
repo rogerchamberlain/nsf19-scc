@@ -1,8 +1,121 @@
 \section{Integrative Research}
 \label{sec:research}
 
-\FIXME{Outline the technical and social sciencde concepts and planning
+\FIXME{Outline the technical and social science concepts and planning
 activities, including potential for transferability and scalability.}
+
+Through this proposed research, we will advance the state of the art in
+catoptric systems, using two important applications to guide and evaluate the
+development of prototype systems: community-scale food production, and lighting
+and thermal management of human-occupied buildings. Our proposed investigations
+will target three primary objectives: (1) identifying and quantifying benefits
+that can be achieved by redirecting light (including daylight, incandescent
+light, light from LEDs, and combinations thereof) for hydroponic and soil-based
+food production, building lighting and thermal management, through the use of
+catoptric systems; (2) establishing and evaluating models and methods to ensure
+the safety, reliability, maintainability, and continued efficacy of these
+systems, using rigorous methods based in Markov Decision Processes for modeling
+and policy generation; and (3) extracting common abstractions from the
+instantiation and evaluation of the approach in three distinct application
+domains (food production, building lighting, and building HVAC), as a starting
+point for further application of the approach in other smart and connected
+communities applications.
+
+\subsection{Intellectual Merit}
+\label{sec:im}
+
+In addition to projected broader impacts on community nutrition, illumination
+of occupied spaces, and sustainable energy use, this proposed research is of
+significant intellectual merit in expanding and deepening the kinds of
+cyber-physical systems capabilities that are pertinent to smart and connected
+communities. Specifically, by introducing active modalities (sensing, control,
+coordination, and actuation) into historically passive (daylight) or largely
+static (artificial lighting) modalities, and controlling and coordinating them
+with respect to well-defined objective functions in each of several distinct
+applications, we seek to transform how light is used indoors.  
+
+For example, while hydroponic food production using artificial light has been
+shown to be effective [TBD - cite Tuscon AZ truck], examining the effectiveness
+of redirected natural light in comparison to (and possibly in combination with)
+artificial lighting is both largely unexamined and well aligned with the
+expertise and interests of this research group and our collaborators.
+Similarly, daylighting (the use of natural light for illumination) design is
+dominated by passive window positioning and configuration~\cite{vgf+13}
+rather than
+active control mechanisms, except in a few cases~\cite{kt16}.
+Heating systems that
+exploit sunlight frequently use actively-controlled mirrors for tracking the
+relative position of the sun, but there is limited experience with using the
+same sets of mirrors for both thermal and lighting control.
+
+We propose to investigate how to utilize actively controlled catoptric (mirror)
+surfaces effectively for improved food production and illumination and heating
+of buildings. Through computer-based control of the dynamic positioning of
+individual mirrors, and cyber-physical integration of natural and artificial
+light sources, the mirrors, the devices that orient them, and customized plant
+growth, building lighting and heating objectives and constraints, we propose to
+enable adaptive and fine-grained management of light as a resource throughout a
+building.
+
+We propose to develop image-based maps and other interfaces to allows users of
+our system to visualize zones of intensity in an interior space prior to the
+mirrors redirecting light, and to allow updates to the map to increase or
+decrease intensity through different modalities of redirection, filtering, or
+blocking or recruiting light sources. Users also will be provided interfaces
+for supplying or creating the images to be used for the map, and defining and
+evaluating different objective functions for lighting intensity, thus
+encouraging user-based control of, and interaction with, the system in each of
+several different applications. The engagement of any member of a community in
+the creation of that image in turn may impact on the entire
+community~\cite{BS13} and
+encourage dialog about the quality and quantity of light within the
+environment.
+
+Given the desire to control different combinations light (sunlight and
+different sources of artificial light) via catoptric surfaces, for different
+plant growth, illumination and/or thermal management objectives, a number of
+crucial cyber-physical systems issues must be addressed.  For example, we will
+investigate how existing techniques like multi-objective control be applied to
+manage the relationships among potentially competing goals within each
+application (which themselves also will be articulated and quantified as a
+contribution of this proposed research). We also intend to investigate whether
+Markov Decision Process (MDP) models can serve as a cohesive framework within
+which each application domain's distinct multi-objective control problem can be
+represented, and appropriate control policies generated automatically (e.g.,
+through techniques like policy iteration), recognizing that maximization of an
+objective function in expectation is a robust way to acknowledge the inherent
+uncertainty of future events (whether it be sunlight availability, lighting
+demand, or any other effect that is either stochastic in nature or is
+sufficiently complex but stationary so that it can be modeled as such).
+
+Constraints for safety, reliability, and maintainability, also will be modeled,
+alongside the objective functions for the continued efficacy of a catoptric
+system in each particular application domain.  Even with a suitable
+multi-objective control approach in place, it is essential that such
+requirements are all addressed together, at once, and consistently. For
+example, considering safety: highly concentrated sunlight could be damaging
+either to a plant or a person and so would lead to deterioration of the
+expected value for the objective function in food production or illumination
+applications.  However, in a HVAC application, such light aimed at a heat
+collector (important when harvesting energy for thermal management purposes)
+may need to be limited even if its increase would improve the application's
+objective function, as it could be harmful to a person who inadvertently
+contacted the beam of light.  This example in turn reveals the kinds of nuances
+that may be in play for such systems, which in turn may inform other
+cyber-physical applications - for example detecting the presence or absence of
+a person in that scenario could inform sensing, control, and actuation
+decisions.  Reliability and maintainability considerations similarly may span
+both objective functions and constraints, for example in community food
+production settings where failure of the system would impair vital nutritional
+resources on which a community increasingly relies.
+
+An important feedback mechanism we will investigate is the use of visual
+data (imagery and video) for assessing the safety, reliability, and
+efficacy of catoptric systems. This will include determination of the true
+orientation of each mirror, providing information on the available
+light and its current positioning, as well as providing feedback on
+benefits to both plants and humans.
+\FIXME{Abby, what, if anything, more should we say here?}
 
 \subsection{Research Questions}
 \label{sec:rq}
@@ -10,5 +123,27 @@ activities, including potential for transferability and scalability.}
 \FIXME{Detail technological and social science research questions, hypotheses
 and research gaps that will be explored during the planning period.}
 
-\subsection{Intellectual Merit}
-\label{sec:im}
+Several key considerations for this proposed research will be the effectiveness
+and ease with which: (1)~abstract state representations (within the MDPs) can
+adequately track and manage complex real-world applications, (2)~large numbers
+of mirrors, sensors, and pan-tilt units can be managed over long periods of
+time as some of them may degrade or cease functioning entirely, and
+(3)~fundamental issues with observability that arise from the first two
+considerations.  We propose to address the first consideration through careful
+abstraction of each application domain's most salient features within our
+models.  For example, in the domain of food production, we will work with our
+collaborators in plant science to identify and/or define initially simplified
+models for how different illumination patterns may optimize food growth - we
+will then apply those models to control catoptric surfaces in small-scale
+physical experiments, and refine the models based on the results of those
+studies.
+
+The second and third considerations will be addressed by tracking and reporting
+the potential degradation of individual elements in the prototype test-bed we
+will develop for each application domain, and examining the uncertainty in
+sensing, actuation, and control that may occur because of it.  Incorporating
+uncertainty into our MDP-based models, e.g., through developing POMDP models,
+PAC bounds (as we have done in prior work [TBD - cite Glaubius et al. UAI
+paper]), and other methods will be another important contribution of this
+research.
+
