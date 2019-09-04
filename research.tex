@@ -65,19 +65,22 @@ growth, building lighting and heating objectives and constraints, we propose to
 enable adaptive and fine-grained management of light as a resource throughout a
 building.
 
-We propose to develop image-based maps and other interfaces to allows users of
-our system to visualize zones of intensity in an interior space prior to the
-mirrors redirecting light, and to allow updates to the map to increase or
-decrease intensity through different modalities of redirection, filtering, or
-blocking or recruiting light sources. Users also will be provided interfaces
-for supplying or creating the images to be used for the map, and defining and
-evaluating different objective functions for lighting intensity, thus
-encouraging user-based control of, and interaction with, the system in each of
-several different applications. The engagement of any member of a community in
-the creation of that image in turn may impact on the entire
-community~\cite{BS13} and
-encourage dialog about the quality and quantity of light within the
-environment.
+We propose to develop image-based maps as the primary tool for understanding
+the incident light in indoor scenes. Prior to the catoptric interventions,
+these maps would highlight where light is concentrated based on visual
+observation and knowledge of the scene geometry and lighting (natural and
+artificial). We then intend to use candidate maps that indicate where light is
+desired to determine the necessary configuration of the smart mirror array. We
+propose two approaches by which such candidate maps can be generated: first, we
+will develop interfaces for users to create their own candidate maps indicating
+where in the scene they desire additional lighting; second, we intend to
+explore the use of deep learning approaches to scene and human activity
+understanding~\cite{chao:wacv2018,Gkioxari_2018_CVPR,Redmon2015YouOL,Toshev_2014_CVPR}
+to generate candidate maps of where light would be most
+effectively redirected (e.g., using deep learning approaches to detect where a
+person is in a scene, and to understand the task that they are performing, in
+order to determine the most appropriate candidate lighting conditions).
+
 
 Given the desire to control different combinations light (sunlight and
 different sources of artificial light) via catoptric surfaces, for different
@@ -123,7 +126,10 @@ efficacy of catoptric systems. This will include determination of the true
 orientation of each mirror, providing information on the available
 light and its current positioning, as well as providing feedback on
 benefits to both plants and humans.
-\FIXME{Abby, what, if anything, more should we say here?}
+In particular, we will investigate different sensing modalities (e.g., RGB,
+thermal) for understanding both the safety of an implemented smart mirror
+configuration, as well as measuring observable benefits in the scene (e.g.,
+visual metrics of plant health such as greenness or leaf temperature).
 
 \subsection{Research Questions}
 \label{sec:rq}
@@ -139,20 +145,30 @@ time as some of them may degrade or cease functioning entirely, and
 (3)~fundamental issues with observability that arise from the first two
 considerations.  We propose to address the first consideration through careful
 abstraction of each application domain's most salient features within our
-models.  For example, in the domain of food production, we will work with our
-collaborators in plant science to identify and/or define initially simplified
-models for how different illumination patterns may optimize food growth -- we
-will then apply those models to control catoptric surfaces in small-scale
+models.  In the domain of food production, we will 
+identify and/or define initially simplified
+models for how different illumination patterns may optimize food growth.
+For example, mirrors might be positioned to optimize light penetration
+through the canopy.
+We will then apply those models to control catoptric surfaces in small-scale
 physical experiments, and refine the models based on the results of those
 studies.
 
-The second and third considerations will be addressed by tracking and reporting
+The second consideration will be addressed by tracking and reporting
 the potential degradation of individual elements in the prototype test-bed we
 will develop for each application domain, and examining the uncertainty in
 sensing, actuation, and control that may occur because of it.  Incorporating
 uncertainty into our MDP-based models, e.g., through developing POMDP models,
-PAC bounds (as we have done in prior work [TBD - cite Glaubius et al. UAI
-paper]), and other methods will be another important contribution of this
+PAC bounds (as we have done in prior work~\cite{gtgs10}),
+and other methods will be another important contribution of this
 research.
-\FIXME{Abby, would a sentence or two about research questions of interest
-to you make sense here?}
+
+The third consideration is centered around observability. 
+This includes investigating how deep learning approaches to scene and
+human activity recognition can be used to automatically understand where
+lighting modifications are necessary in scenes, and 
+assessing the safety and ``success'' of the catoptric systems
+(emotion or behavior recognition plus human-in-the-loop feedback
+in office environments, thermal measurements in HVAC systems,
+visual measurements of plant health and productivity).
+
