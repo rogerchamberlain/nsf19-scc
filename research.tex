@@ -1,13 +1,10 @@
 \section{Integrative Research}
 \label{sec:research}
 
-%\FIXME{Outline the technical and social science concepts and planning
-%activities, including potential for transferability and scalability.}
-
 Through this proposed research, we will advance the state of the art in
 catoptric systems, using two important applications to guide and evaluate the
-development of prototype systems: sustainable and controlled plant growth,
-and lighting
+development of prototype systems: (1) sustainable and controlled plant growth;
+and (2) lighting
 and thermal management of human-occupied buildings\footnote{No human subjects
 research will be conducted as part of the planning grant. Any subsequent
 research
@@ -21,7 +18,8 @@ plant growth (i.e., food production),
 building lighting, and thermal management, through the use of
 catoptric systems; (2) establishing and evaluating models and methods to ensure
 the safety, reliability, maintainability, and continued efficacy of these
-systems, using rigorous methods based in Markov decision processes for modeling
+systems, using rigorous methods based in Markov decision
+processes~\cite{puterman} for modeling
 and policy generation; and (3) extracting common abstractions from the
 instantiation and evaluation of the approach in three distinct application
 domains (food production, building lighting, and building HVAC), as a starting
@@ -48,7 +46,8 @@ effectiveness of redirecting natural light in comparison to
 artificial lighting is both largely unexamined and well aligned with the
 expertise and interests of the research team.
 Similarly, daylighting (the use of natural light for illumination) design is
-dominated by passive window positioning and configuration~\cite{vgf+13}
+dominated by passive window positioning and
+configuration~\cite{azaise13,Leslie03,vgf+13}
 rather than
 active control mechanisms, except in a few cases~\cite{kt16}.
 Heating systems that
@@ -106,7 +105,7 @@ multi-objective control approach in place, it is essential that such
 requirements are all addressed together, at once, and consistently. For
 example, considering safety: highly concentrated sunlight could be damaging
 either to a plant or a person and so would lead to deterioration of the
-expected value for the objective function in food production or illumination
+expected value for the objective function in crop production or illumination
 applications.  However, in a HVAC application, such light aimed at a heat
 collector (important when harvesting energy for thermal management purposes)
 may need to be limited even if its increase would improve the application's
@@ -129,7 +128,7 @@ benefits to both plants and humans.
 In particular, we will investigate different sensing modalities (e.g., RGB,
 thermal) for understanding both the safety of an implemented smart mirror
 configuration, as well as measuring observable benefits in the scene (e.g.,
-visual metrics of plant health such as greenness or leaf temperature).
+metrics of plant health such as greenness or leaf temperature).
 
 \subsection{Research Questions}
 \label{sec:rq}
@@ -145,9 +144,9 @@ time as some of them may degrade or cease functioning entirely, and
 (3)~fundamental issues with observability that arise from the first two
 considerations.  We propose to address the first consideration through careful
 abstraction of each application domain's most salient features within our
-models.  In the domain of food production, we will 
+models.  In the domain of plant growth, we will 
 identify and/or define initially simplified
-models for how different illumination patterns may optimize food growth.
+models for how different illumination patterns may optimize crop growth.
 For example, mirrors might be positioned to optimize light penetration
 through the canopy.
 We will then apply those models to control catoptric surfaces in small-scale
